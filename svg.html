@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Drawing</title>
+
+    <style>
+    @keyframes sun {
+        0% {cx: 65; cy: -20; fill: rgb(220, 223, 10)}
+        50% {fill: rgb(139, 96, 3)}
+        70% {fill: rgb(73, 20, 4)}
+        80% {fill: rgb(26, 7, 0)}
+        100% {cx: 70; cy: 400; fill: rgb(150, 183, 233)}
+    }
+
+    .sun {
+        animation: sun 15s infinite;
+    }
+
+    @keyframes sky {
+        0% {cx: 70; cy: 50; fill: rgb(150, 183, 233)}
+        50% {fill: rgb(32, 22, 36)}
+        70% {fill: rgb(38, 23, 44)}
+        80% {fill: rgb(26, 7, 0)}
+        100% {cx: 70; cy: 350; fill: rgb(150, 183, 233)}
+    }
+
+    .sky {
+        animation: sky 15s infinite;
+    }
+
+    @keyframes cloud {
+        0% { transform: translateX(0); fill: rgb(196, 170, 201)}
+        50% { transform: translateX(-100px); fill: rgb(198, 171, 204)}
+        70% { transform: translateX(-30px); fill: rgb(129, 110, 133)}
+        80% { transform: translateX(20px); fill: rgb(26, 7, 0)}
+        100% { transform: translateX(66px); fill: rgb(246, 229, 250)}
+    }
+
+    .cloud {
+        animation: cloud 15s linear infinite alternate;
+    }
+
+    @keyframes ground {
+        0% {fill: thistle}
+        50% {fill: rgb(95, 49, 95)}
+        70% {fill: rgb(80, 24, 80)}
+        80% {fill: rgb(104, 68, 98)}
+        100% {fill: thistle}
+    }
+
+    .ground {
+        animation: ground 15s infinite;
+    }
+
+    @keyframes mountain1 {
+        0% {fill: rosybrown}
+        50% {fill: rgb(110, 101, 110)}
+        70% {fill: rgb(85, 63, 85)}
+        80% {fill: rgb(109, 58, 100)}
+        100% {fill: rosybrown}
+    }
+
+    .mountain1 {
+        animation: mountain1 15s infinite;
+    }
+
+    @keyframes mountain2 {
+        0% {fill: rgb(221, 197, 160)}
+        50% {fill: rgb(112, 67, 89)}
+        70% {fill: rgb(92, 16, 52)}
+        80% {fill: rgb(99, 90, 97)}
+        100% {fill: rgb(221, 197, 160)}
+    }
+
+    .mountain2 {
+        animation: mountain2 15s infinite;
+    }
+
+    @keyframes trunk {
+        0% {fill: sienna}
+        50% {fill: rgb(116, 59, 32)}
+        70% {fill: rgb(65, 33, 18)}
+        80% {fill: rgb(44, 23, 13)}
+        100% {fill: sienna}
+    }
+
+    .trunk {
+        animation: trunk 15s infinite;
+    }
+
+    @keyframes tree {
+        0% {fill: darkolivegreen}
+        50% {fill: rgb(63, 80, 35)}
+        70% {fill: rgb(39, 49, 21)}
+        80% {fill: rgb(77, 88, 59)}
+        100% {fill: darkolivegreen}
+    }
+
+    .tree {
+        animation: tree 15s infinite;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+    <svg width="600" height="600">
+
+        <!--BACKGROUND-->
+        <rect x="0" y="0" width="500" height="500" fill="paleturquoise" class="sky"/>
+        
+        <!--SUN-->
+        <circle cx="70" cy="50" r="25" fill="yellow" class="sun"/>
+
+        <!--GROUND-->   
+        <rect x="0" y="400" width="500" height="100" class="ground"/>
+
+        <!--MOUNTAIN-->
+        <polygon points = "100, 400 200, 200 300, 400" class="mountain1"/>
+        <polygon points = "200, 400 300, 120 400, 400" class="mountain2"/>
+
+        <!--TREE-->
+        <rect x="110" y="300" width="30" height="100" class="trunk"/>
+
+        <g class="tree">
+        <circle cx="125" cy="260" r="40"/>
+        <circle cx="100" cy="320" r="40"/>
+        <circle cx="95" cy="288" r="40"/>
+        <circle cx="150" cy="320" r="40"/>
+        <circle cx="156" cy="288" r="40"/>
+        </g>
+
+        <rect x="350" y="300" width="30" height="100" class="trunk"/>
+
+        <g class="tree">
+        <circle cx="366" cy="260" r="45"/>
+        <circle cx="341" cy="320" r="40"/>
+        <circle cx="336" cy="288" r="40"/>
+        <circle cx="391" cy="320" r="40"/>
+        <circle cx="397" cy="288" r="40"/>
+        </g>
+
+        <!--CLOUDS-->
+        
+        <g class="cloud">
+        <circle cx="190" cy="110" r="30"/>
+        <circle cx="160" cy="130" r="26"/>
+        <circle cx="220" cy="125" r="25"/>
+        <circle cx="190" cy="130" r="30"/>
+        </g>
+
+        <g class="cloud">
+        <circle cx="390" cy="110" r="20"/>
+        <circle cx="365" cy="120" r="20"/>
+        <circle cx="415" cy="125" r="20"/>
+        <circle cx="390" cy="130" r="20"/>
+        </g>
+
+    </svg>
+
+</body>
+</html>
